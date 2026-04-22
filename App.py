@@ -44,6 +44,8 @@ st.set_page_config(
 import desercion_dashboard
 import perfil360_dashboard
 import cursos_dashboard
+import rendimiento_dashboard
+import engagement_dashboard
 # import rendimiento_dashboard
 # import pagos_dashboard
 # import engagement_dashboard
@@ -55,16 +57,14 @@ import cursos_dashboard
 
 MENU = {
     "📊 Analítica Estudiantil": [
-        ("📉", "Deserción Estudiantil",   desercion_dashboard),
+        ("📉", "Deserción Estudiantil", desercion_dashboard),
         ("🧑‍🎓", "Perfil 360° del Estudiante", perfil360_dashboard),
         ("📈", "Cursos", cursos_dashboard),
+        ("📊", "Rendimiento Académico", rendimiento_dashboard),   # 👈 NUEVO
     ],
-    # "💳 Gestión Financiera": [
-    #     ("💰", "Pagos y Morosidad", pagos_dashboard),
-    # ],
-    # "💻 Plataforma LMS": [
-    #     ("🖥️", "Engagement Digital", engagement_dashboard),
-    # ],
+    "💻 Plataforma LMS": [
+        ("🖥️", "Engagement Digital", engagement_dashboard),      # 👈 NUEVO
+    ],
 }
 
 # Descripciones para las tarjetas de la pantalla de inicio
@@ -79,12 +79,19 @@ CARD_DESC = {
         "actividad LMS y alertas de riesgo personalizadas.",
         "#9B5DE5",
     ),
-    "Cursos dashboard": (
-        "Enfocado en evaluar el desempeño general, la asistencia "
-        "y la distribución de notas por asignatura mediante filtros interactivos.",
+    "Cursos": (   # 👈 corrige nombre (antes estaba mal)
+        "Evaluación del desempeño general, asistencia y distribución "
+        "de notas por asignatura.",
         "#9B5DE5",
     ),
-    # "Rendimiento Académico": ("Análisis de notas y aprobación por curso.", "#457B9D"),
+    "Rendimiento Académico": (   # 👈 NUEVO
+        "Análisis de notas, aprobación y desempeño académico por estudiante y curso.",
+        "#457B9D",
+    ),
+    "Engagement Digital": (   # 👈 NUEVO
+        "Análisis de interacción en el LMS, participación y actividad estudiantil.",
+        "#2EC4B6",
+    ),
 }
 
 HOME_KEY = "🏠  Inicio"
