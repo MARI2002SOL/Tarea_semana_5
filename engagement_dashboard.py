@@ -288,7 +288,7 @@ def show():
                            delta="por estudiante", color=COLOR_PURPLE)
     with k3: _metric_card("Tiempo promedio",
                            f"{ef['total_time_min'].mean():.0f} min",
-                           delta="total en plataforma", color=COLOR_TEAL := COLOR_SUCCESS)
+                           delta="total en plataforma", color=COLOR_SUCCESS)
     with k4: _metric_card("Tasa de completación",
                            f"{ef['completion_rate'].mean():.1f}%",
                            color=COLOR_SUCCESS if ef['completion_rate'].mean() >= 70 else COLOR_WARNING)

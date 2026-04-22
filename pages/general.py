@@ -131,7 +131,11 @@ def show():
             return
 
     # ── Preprocesamiento ─────────────────────
-    dropout_students = dropout[dropout["dropout"] == True]["student_id"].unique()
+    if "dropout" in dropout.columns:
+        dropout_students = dropout[dropout["dropout"] == True]["student_id"].unique()
+    else:
+        dropout_students = []
+
     total_students   = students["student_id"].nunique()
     total_dropout    = len(dropout_students)
     tasa_desercion   = total_dropout / total_students * 100 if total_students else 0
